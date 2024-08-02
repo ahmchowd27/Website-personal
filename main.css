@@ -1,0 +1,239 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:  Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px;
+    color: white;
+}
+header{
+    background-color: rgba(51, 51, 51, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+
+}
+
+header .logo{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f4b41a;
+    text-shadow: 2px 2px 4px black;
+
+}
+nav ul{
+   list-style-type:none;
+   margin:0;
+   padding:0;
+   display: flex;
+}
+nav ul li{
+
+    margin: 0 15px;
+    position: relative;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    position: relative;
+    padding: 5px 10px;
+}
+nav ul li a::before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f4b41a;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+nav ul li a:hover::before{
+    transform: scaleX(1);
+}
+nav ul li a:hover{
+    color: #f4b41a;
+}
+.menu-toggle{
+    display: none;
+    cursor: pointer;
+}
+.menu-toggle span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.intro-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg,#121212 50%, #333 50%);
+    min-height: 94svh;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+
+}
+
+.intro{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 143px;
+}
+.intro img{
+    width: -webkit-fill-available;
+    max-height: 517px;
+    border-radius: 50%;
+    border: 5px solid #f4b41a;
+    margin-left: 150px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.intro img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 20 rgba(244, 180, 26, 0.5);
+}
+.intro-content{
+    max-width: 600px;
+}
+
+.intro-content h1{
+    font-size: 3.5rem;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 4px rgb(rgba(10, 10, 10, 0.158), green, blue);
+}
+.intro-content .title{
+    background: #f4b41a;
+    color: black;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.intro-content p{
+font-size: 1.4rem;
+margin: 20px 0;
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-buttons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cta-buttons a{
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.download-cv{
+    background-color: #f4b41a;
+    color: black;
+}
+.hire-me{
+    background-color: white;
+    color: black;
+}
+.cta-buttons a:hover{
+    background-color: #f4b41a;
+    color: black;
+    box-shadow: 2px 2px 8px rgba(244, 180, 26, 0.5);
+
+}
+.social-links a{
+    color: #fff;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+.social-links a:hover{
+    background-color: #f4b41a;
+    color: white;
+    box-shadow: 2px 2px 8px rgba(244, 180, 26, 0.5);
+}
+
+.mode-toggle{
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.3s;
+
+}
+.mode-toggle:hover{
+    color: #f4b41a;
+}
+
+@media (max-width:768px) {
+    header{
+        height: 3rem;
+
+    }
+    .intro{
+        flex-direction: column;
+        text-align: center;
+    }
+    .intro img{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    .intro-content{
+        max-width: 90%;
+    }
+    .cta-buttons{
+        justify-content:center;
+    }
+    .menu-toggle{
+        display: block;
+        z-index: 1001;
+    }
+    nav.open ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    nav ul{
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 10px;
+        margin-top: 20px;
+    }
+    nav ul li a{
+        color: #121212;
+    }
+    nav ul li{
+        margin: 10px 0;;
+    }
+}
